@@ -1,0 +1,15 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<br>
+<h2> Party list </h2>
+<br>
+{% for party in party_list %}
+    <div class="book">
+        <h4> {{party.name}} </h4>
+        
+        <p> ABBREVIATION: {{party.abbreviation}} </p>
+    </div>
+{% endfor %}
+
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<br>
+<h2> Ballot list </h2>
+<br>
+{% for ballot in ballot_list %}
+    <div class="book">
+        <h4> PERSON WHO TOOK THE BALLOT:  {{ballot.voter}} </h4>
+        <p> TIME OF TAKING THE BALLOT: {{ballot.time_of_ballot}} </p>
+        <p> ID OF BALLOT: {{ballot.id_of_ballot}} </p>
+        <p> VOTED FOR: {{ballot.voted_for}} </p>
+    </div>
+{% endfor %}
+
+{% endblock %}

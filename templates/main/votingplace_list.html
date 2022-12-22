@@ -1,0 +1,17 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<br>
+<h2> Voting place list </h2>
+<br>
+{% for votingplace in votingplace_list %}
+    <div class="book">
+        <h4> {{votingplace.name}} </h4>
+        <p> ADRESS: {{votingplace.address}} </p>
+        <p> OPENS AT: {{votingplace.open_at}} </p>
+        <p> CLOSES AT: {{votingplace.close_at}} </p>
+        <p> <a href="{{votingplace.name}}"> LIST OF VOTERS </a></p>
+    </div>
+{% endfor %}
+
+{% endblock %}
