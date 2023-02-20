@@ -1,0 +1,15 @@
+{% extends 'base_generic.html' %}
+	
+{% block content %}
+<br>
+<h1>{% if OIB %} Edit {% else %} New {% endif %} Candidate</h1>
+<hr><hr>
+<center>
+<form method="POST" novalidate>
+	{% csrf_token %}
+	{{ form.as_p }}
+	<input type="submit" value="Save" />
+</form>
+</center>
+
+{% endblock content %}

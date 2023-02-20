@@ -1,0 +1,26 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+
+    <center>
+    <br>
+    <h1>Add ballot to database</h1>
+    <hr><hr>
+    {% if submitted %}
+
+        Ballot succesfully added
+
+    {% else %}
+
+        <form action="" method=POST> 
+            {% csrf_token %}
+
+            {{form.as_p}}
+
+            <input type="submit" value="Enter" class="btn btn-success">
+        </form>
+
+    {% endif %}
+    
+    </center>
+{% endblock %}

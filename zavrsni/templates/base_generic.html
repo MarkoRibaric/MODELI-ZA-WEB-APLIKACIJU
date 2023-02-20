@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}"> 
+    <title>{% block title %}Knjiznica{% endblock %}</title>
+
+    {% if user.is_authenticated %}
+    <p>Vaše ime: {{ user.username }}</p>
+{% else %}
+    <p>Niste prijavljeni.</p>
+{% endif %}
+
+<div style="position:absolute;right:20px;top:10px">
+    <a href="register/">Register</a></li>
+</div>
+<div style="position:absolute;right:120px;top:10px">
+    <a href="accounts/login">Log in</a></li>
+</div>
+</head>
+
+<body>
+    <h1>My library</h1>
+    <div id="sidebar">
+        {% block sidebar %}
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/party">Parties</a></li>
+            <li><a href="/candidate">Candidates</a></li>
+            <li><a href="/votingplace">Voting Places</a></li>
+            <li><a href="/voter">Voters</a></li>
+            <li><a href="/ballot">Ballots</a></li>
+            <li><a href="/add_party">Add Party</a></li>
+            <li><a href="/add_candidate">Add Candidate</a></li>
+            <li><a href="/add_votingplace">Add Voting Place</a></li>
+            <li><a href="/add_voter">Add Voter</a></li>
+            <li><a href="/add_ballot">Add Ballot</a></li>
+
+        </ul>
+        {% endblock %}
+    </div>
+
+    <div id="content">
+        {% block content %}{% endblock %}
+    </div>
+
+</body>
+</html>

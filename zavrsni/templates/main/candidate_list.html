@@ -1,0 +1,17 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<br>
+<h2> Candidate list </h2>
+<br>
+{% for candidate in candidate_list %}
+    <div class="book">
+        <h4> {{candidate.name}} </h4>
+        <p> OIB: {{candidate.OIB}} </p>
+        <p> AGE: {{candidate.age}} </p>
+        <p> PARTY: {{candidate.party_names}} </p>
+        <p><a href="{% url 'candidate-edit' candidate.OIB %}">Edit</a></p>
+    </div>
+{% endfor %}
+
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'base_generic.html' %} 
+
+{% block content %}
+<br>
+<h1>Delete Ballot</h1>
+<hr><hr>
+<center>
+<form method="POST">
+  {% csrf_token %}
+  
+  <p>Are you sure that you want to delete the ballot from voter "{{ballot.voter}}"?</p>
+  <div>
+    <button type="submit">Yes, Delete</button>
+    <a href="../../">Cancel</a>
+  </div>
+</form>
+</center>
+
+
+{% endblock content %}
